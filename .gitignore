@@ -1,0 +1,28 @@
+# Секреты — никогда не коммитим
+.env
+.env.*
+*.token
+*.pem
+*.key
+secrets/
+
+# Образы ВМ и дисков — слишком большие для git
+*.qcow2
+*.vmdk
+*.vdi
+*.iso
+*.img
+
+# Системный и редакторский мусор
+.DS_Store
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node
+node_modules/
