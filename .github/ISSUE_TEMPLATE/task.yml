@@ -1,0 +1,21 @@
+name: Задача
+description: Обычная задача по стенду, корпусу, тексту или инфраструктуре
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Что нужно сделать
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Критерий готовности
+      description: Критерий закрытия задачи (файл, работающий запуск, таблица)
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Ссылки
+      description: Раздел плана, источники, связанные задачи

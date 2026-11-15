@@ -1,0 +1,37 @@
+name: Встреча
+description: Встреча вдвоём или с преподавателем
+labels: ["meeting"]
+body:
+  - type: input
+    id: date
+    attributes:
+      label: Дата
+      placeholder: "2026-11-27"
+    validations:
+      required: true
+  - type: dropdown
+    id: participants
+    attributes:
+      label: Участники
+      options:
+        - Авторы
+        - Авторы и преподаватель
+    validations:
+      required: true
+  - type: textarea
+    id: agenda
+    attributes:
+      label: Повестка
+      description: Заполняется до встречи
+    validations:
+      required: true
+  - type: textarea
+    id: decisions
+    attributes:
+      label: Решения
+      description: Заполняется после встречи. Важные решения дублируем в journal/
+  - type: textarea
+    id: next
+    attributes:
+      label: Следующие шаги
+      description: Новые задачи создаём отдельными issues и ссылаемся на них здесь

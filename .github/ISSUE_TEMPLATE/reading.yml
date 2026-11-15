@@ -1,0 +1,31 @@
+name: Чтение
+description: Прочитать источник из каталога и оформить карточку
+labels: ["reading"]
+body:
+  - type: input
+    id: code
+    attributes:
+      label: Код источника
+      placeholder: "D02"
+    validations:
+      required: true
+  - type: textarea
+    id: sections
+    attributes:
+      label: Что читать
+      description: Разделы или главы из каталога плана
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Результат чтения
+      description: Вопрос или задание из каталога, на который нужно ответить
+    validations:
+      required: true
+  - type: checkboxes
+    id: card
+    attributes:
+      label: Перед закрытием
+      options:
+        - label: Карточка источника сохранена в sources/

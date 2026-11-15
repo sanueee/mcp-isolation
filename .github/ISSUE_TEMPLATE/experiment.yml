@@ -1,0 +1,55 @@
+name: Эксперимент
+description: Серия запусков сценария с контролями
+labels: ["experiment"]
+body:
+  - type: dropdown
+    id: scenario
+    attributes:
+      label: Сценарий
+      options:
+        - S1 — разрешённый bind mount
+        - S2 — docker.sock
+        - S3 — --privileged и тестовое устройство
+        - S4 — лишняя capability
+    validations:
+      required: true
+  - type: checkboxes
+    id: runtimes
+    attributes:
+      label: Среды
+      options:
+        - label: runc
+        - label: gVisor (runsc)
+  - type: checkboxes
+    id: variants
+    attributes:
+      label: Варианты прав и контроли
+      options:
+        - label: Исходные права
+        - label: Минимально достаточные права
+        - label: Минус-контроль
+        - label: Плюс-контроль
+  - type: textarea
+    id: preconditions
+    attributes:
+      label: Предпосылки
+      description: Что должно быть выполнено на стенде до запуска
+    validations:
+      required: true
+  - type: textarea
+    id: success
+    attributes:
+      label: Цель и внешняя проверка
+      description: Какое действие считаем достижением цели и как его подтверждает внешний процесс
+    validations:
+      required: true
+  - type: input
+    id: limit
+    attributes:
+      label: Лимит времени на запуск
+      placeholder: "задаётся по пилоту"
+  - type: textarea
+    id: runs
+    attributes:
+      label: Записи запусков
+      description: Ссылки на файлы в runs/ (заполняется по ходу работы)
